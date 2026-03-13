@@ -1,10 +1,12 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import window from '@ohos.window';
 import hilog from '@ohos.hilog';
+import { StorageService } from '../services/StorageService';
 
 export default class EntryAbility extends UIAbility {
   onCreate(want, launchParam) {
     hilog.info(0x0000, 'EntryAbility', 'onCreate');
+    StorageService.init(this.context);
   }
 
   onDestroy(want, launchParam) {
