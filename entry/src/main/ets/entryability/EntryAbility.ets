@@ -2,11 +2,19 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import window from '@ohos.window';
 import hilog from '@ohos.hilog';
 import { StorageService } from '../services/StorageService';
+import { DatabaseService } from '../services/DatabaseService';
 
 export default class EntryAbility extends UIAbility {
-  onCreate(want, launchParam) {
+  async onCreate(want, launchParam) {
     hilog.info(0x0000, 'EntryAbility', 'onCreate');
     StorageService.init(this.context);
+
+    // 初始化DatabaseService
+    try {
+      await DatabaseService.init(this.context);
+    } catch (error) {
+      hilog.error(0x0000, 'EntryAbility', 'DatabaseService初始化失败: %{public}s', JSON.stringify(error));
+    }
   }
 
   onDestroy(want, launchParam) {
