@@ -14,6 +14,12 @@ struct MinePage {
     this.user = this.viewModel.user;
   }
 
+  navigateToNotifications() {
+    router.pushUrl({
+      url: 'pages/NotificationListPage'
+    });
+  }
+
   async handleLogout() {
     await this.viewModel.logout();
     Toast.showShort('已退出登录');
@@ -54,11 +60,12 @@ struct MinePage {
         .width('100%')
         .padding({ left: 20, right: 20 })
 
-        Row({ space: 40 }) {
+        Row({ space: 30 }) {
           this.StatItem('作品', this.user?.worksCount || 0)
           this.StatItem('关注', this.user?.followingCount || 0)
           this.StatItem('粉丝', this.user?.followersCount || 0)
           this.StatItem('评分', this.user?.rating || 0)
+          this.StatItem('通知', 0, true)
         }
         .width('100%')
         .justifyContent(FlexAlign.Center)
@@ -127,6 +134,15 @@ struct MinePage {
         .opacity(0.8)
         .margin({ top: 5 })
     }
+    .width('100%')
+    .height('100%')
+    .backgroundColor(label === '通知' ? '#1890FF' : '#007DFF')
+    .borderRadius(10)
+    .onClick(() => {
+      if (label === '通知') {
+        this.navigateToNotifications();
+      }
+    })
   }
 
   @Builder
