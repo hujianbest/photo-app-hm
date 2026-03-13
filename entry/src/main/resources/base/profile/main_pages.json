@@ -14,6 +14,10 @@
     "pages/TagManagementPage",
     "pages/PostDetailPage",
     "pages/PostCreatePage",
-    "pages/NotificationListPage"
+    "pages/NotificationListPage",
+    "pages/BookingCreatePage",
+    "pages/BookingDetailPage",
+    "pages/ProfilePage",
+    "pages/ChatPage"
   ]
 }
