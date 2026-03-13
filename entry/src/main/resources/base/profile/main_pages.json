@@ -8,6 +8,9 @@
     "pages/PhotoPage",
     "pages/BookingPage",
     "pages/LearnPage",
-    "pages/MinePage"
+    "pages/MinePage",
+    "pages/AlbumDetailPage",
+    "pages/PhotoDetailPage",
+    "pages/TagManagementPage"
   ]
 }
