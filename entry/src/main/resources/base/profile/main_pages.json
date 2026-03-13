@@ -4,6 +4,10 @@
     "pages/LoginPage",
     "pages/RegisterPage",
     "pages/MainPage",
+    "pages/HomePage",
+    "pages/PhotoPage",
+    "pages/BookingPage",
+    "pages/LearnPage",
     "pages/MinePage"
   ]
 }
