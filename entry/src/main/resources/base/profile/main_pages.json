@@ -11,6 +11,9 @@
     "pages/MinePage",
     "pages/AlbumDetailPage",
     "pages/PhotoDetailPage",
-    "pages/TagManagementPage"
+    "pages/TagManagementPage",
+    "pages/PostDetailPage",
+    "pages/PostCreatePage",
+    "pages/NotificationListPage"
   ]
 }
